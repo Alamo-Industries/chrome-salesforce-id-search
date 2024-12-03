@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Find on Salesforce",
+  "name": "Find in Salesforce",
   "version": "1.0",
-  "description": "Quickly search for records by ID using the URL bar",
+  "description": "Quickly search for records by ID using the URL bar. This is an unofficial extension not supported or endorsed by Salesforce - created for quality of life improvements.",
   "permissions": ["tabs", "storage"],
   "omnibox": {
     "keyword": "sf"
