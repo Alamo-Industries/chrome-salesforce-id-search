@@ -1,5 +1,14 @@
 function save_options() {
-  var url = document.getElementById('orgUrl').value;
+  var url = document.getElementById('orgUrl').value.trim();
+  
+  // Add https:// if no protocol is specified
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    url = 'https://' + url;
+  }
+  
+  // Update the input field to show the corrected URL
+  document.getElementById('orgUrl').value = url;
+
   chrome.storage.sync.set({
     orgUrl: url
   }, function() {
