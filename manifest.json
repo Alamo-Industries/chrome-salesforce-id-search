@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Find in Salesforce",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Quickly search for records by ID using the URL bar. Not officially supported by Salesforce.",
   "permissions": ["tabs", "storage"],
   "omnibox": {
