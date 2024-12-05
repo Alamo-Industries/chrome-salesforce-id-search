@@ -2,26 +2,25 @@
 <html>
 
 <head>
-  <title>Extension Options</title>
+  <title>Find in Salesforce</title>
   <style>
     body {
-      padding: 20px;
+      width: 300px;
+      padding: 15px;
       font-family: Arial, sans-serif;
-      max-width: 500px;
-      margin: 0 auto;
       background-color: #f5f5f5;
     }
 
     .container {
       background-color: white;
-      padding: 25px;
+      padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: #333;
       font-weight: bold;
     }
@@ -38,11 +37,12 @@
     button {
       background-color: #4CAF50;
       color: white;
-      padding: 10px 20px;
+      padding: 8px 16px;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      margin-top: 15px;
+      margin-top: 10px;
+      width: 100%;
     }
 
     button:hover {
@@ -50,16 +50,29 @@
     }
 
     #status {
-      margin-top: 15px;
-      padding: 10px;
+      margin-top: 10px;
+      padding: 8px;
       border-radius: 4px;
+      display: none;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .success {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .error {
+      background-color: #ffebee;
+      color: #c62828;
     }
 
     .footer {
       text-align: center;
-      font-size: 12px;
+      font-size: 10px;
       color: #888;
-      margin-top: 20px;
+      margin-top: 15px;
       font-style: italic;
     }
 
@@ -72,7 +85,7 @@
 
 <body>
   <div class="container">
-    <h2>Salesforce Id Search Settings</h2>
+    <h3>Salesforce Id Search</h3>
     <div>
       <label>
         Organization URL:
