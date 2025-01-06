@@ -5,7 +5,7 @@
   <title>Find in Salesforce</title>
   <style>
     body {
-      width: 300px;
+      width: 500px;
       padding: 15px;
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
@@ -13,45 +13,87 @@
 
     .container {
       background-color: white;
-      padding: 15px;
+      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #333;
-      font-weight: bold;
+    h3 {
+      margin-top: 0;
+      color: #1a73e8;
+      margin-bottom: 20px;
     }
 
-    input[type="url"] {
-      width: 100%;
+    .url-entry {
+      margin-bottom: 15px;
+      display: grid;
+      grid-template-columns: 120px 1fr 40px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    input {
+      height: 36px;
       padding: 8px;
-      margin-top: 5px;
       border: 1px solid #ddd;
       border-radius: 4px;
       box-sizing: border-box;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: #1a73e8;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+    }
+
+    .button-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
     }
 
     button {
-      background-color: #4CAF50;
+      height: 36px;
+      background-color: #1a73e8;
       color: white;
-      padding: 8px 16px;
+      padding: 0 16px;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      margin-top: 10px;
-      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 36px;
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #1557b0;
+    }
+
+    .delete-btn {
+      width: 36px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .delete-btn:hover {
+      background-color: #c82333;
+    }
+
+    #addUrl {
+      background-color: #28a745;
+    }
+
+    #addUrl:hover {
+      background-color: #218838;
     }
 
     #status {
-      margin-top: 10px;
-      padding: 8px;
+      margin-top: 15px;
+      padding: 10px;
       border-radius: 4px;
       display: none;
       text-align: center;
@@ -70,7 +112,7 @@
 
     .footer {
       text-align: center;
-      font-size: 10px;
+      font-size: 11px;
       color: #888;
       margin-top: 15px;
       font-style: italic;
@@ -80,19 +122,25 @@
       color: #666;
       font-weight: 500;
     }
+
+    #urls-container {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h3>Salesforce Id Search</h3>
-    <div>
-      <label>
-        Organization URL:
-        <input type="url" id="orgUrl" required placeholder="https://example.com">
-      </label>
+    <h3>Salesforce URL Manager</h3>
+    <div id="urls-container">
+      <!-- URL entries will be added here dynamically -->
     </div>
-    <button id="save">Save</button>
+    <div class="button-container">
+      <button id="addUrl">Add New URL</button>
+      <button id="save">Save Changes</button>
+    </div>
     <div id="status"></div>
     <div class="footer">proudly presented to you by <span>Alamo Industries</span> &#10024;</div>
   </div>

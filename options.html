@@ -19,6 +19,20 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
+    .button-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    #addUrl {
+      background-color: #2196F3;
+    }
+
+    #addUrl:hover {
+      background-color: #1976D2;
+    }
+
     label {
       display: block;
       margin-bottom: 10px;
@@ -29,7 +43,6 @@
     input[type="url"] {
       width: 100%;
       padding: 8px;
-      margin-top: 5px;
       border: 1px solid #ddd;
       border-radius: 4px;
       box-sizing: border-box;
@@ -67,19 +80,42 @@
       color: #666;
       font-weight: 500;
     }
+
+    .url-entry {
+      margin-bottom: 15px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 10px;
+    }
+    
+    .urlKey {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .delete-btn {
+      width: auto;  /* Allow button to fit text */
+      height: 36px;
+      padding: 0 12px;  /* Add horizontal padding */
+      background-color: #dc3545;
+      color: white;
+      font-size: 14px;  /* Match other button text size */
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
     <h2>Salesforce Id Search Settings</h2>
-    <div>
-      <label>
-        Organization URL:
-        <input type="url" id="orgUrl" required placeholder="https://example.com">
-      </label>
+    <div id="urls-container">
+      <!-- URL entries will be added here dynamically -->
     </div>
-    <button id="save">Save</button>
+    <div class="button-container">
+      <button id="addUrl">Add New Entry</button>
+      <button id="save">Save</button>
+    </div>
     <div id="status"></div>
     <div class="footer">proudly presented to you by <span>Alamo Industries</span> &#10024;</div>
   </div>
