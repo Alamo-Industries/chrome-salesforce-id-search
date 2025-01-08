@@ -4,19 +4,27 @@
 <head>
   <title>Find in Salesforce</title>
   <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
   <div class="container">
-    <h3>Salesforce URL Manager</h3>
+    <div class="header">
+      <h3>Find in Salesforce URL Settings</h3>
+    </div>
     <div id="urls-container">
       <!-- URL entries will be added here dynamically -->
     </div>
     <div class="button-container">
-      <button id="addUrl">Add New URL</button>
-      <button id="save">Save Changes</button>
+      <button id="addUrl">
+        <i class="fas fa-plus"></i> Add New URL
+      </button>
+      <button id="save">
+        <i class="fas fa-save"></i> Save Changes
+      </button>
     </div>
     <div id="status"></div>
+    <div class="help-text">Need help? Visit the extension options page for detailed usage instructions.</div>
     <div class="footer">proudly presented to you by <span>Alamo Industries</span> &#10024;</div>
   </div>
   <script src="options.js"></script>

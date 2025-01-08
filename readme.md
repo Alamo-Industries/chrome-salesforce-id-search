@@ -1,57 +1,34 @@
-# Salesforce Id Search Extension
+# Find in Salesforce
 
-A Chrome extension that simplifies searching for Salesforce records by allowing you to quickly navigate to records using the URL bar. Save time by avoiding the need to manually type or remember your org's URL.
+A Chrome extension that allows quick navigation to Salesforce records across multiple Salesforce instances.
 
 ## Features
-
-- Quick access to Salesforce records directly from Chrome's URL bar
-- Configurable org URL for your Salesforce environment
-- Simple keyword trigger ("sf") followed by the `tab` key and then the record ID
-- Works with any Salesforce record ID
+- Configure multiple Salesforce instance shortcuts
+- Quick access to Salesforce records using keyboard commands from the URL bar
+- Support for all Salesforce record types
+- Works across multiple Salesforce instances (Production, Sandbox, etc.)
 
 ## Installation
+1. Download the extension from the Chrome Web Store and activate it
+2. Open the extension options page and configure the Salesforce instances you want to use
+3. You can also add shortcuts to the URL bar by clicking the extension icon and selecting "Add new URL"
 
-1. Install the extension from the Chrome Web Store [Add store link here]
-2. Click on the extension icon in your Chrome toolbar
-3. Configure your Salesforce org URL in the options page
-
-## Setup
-
-1. Right-click the extension icon in your Chrome toolbar
-2. Select "Options" from the menu
-3. Enter your Salesforce org URL (e.g., `https://mycompany.my.salesforce.com`)
-4. Click Save
 
 ## Usage
+1. Add Salesforce URLs with unique shortcut keys (e.g., 'prod' for production)
+2. Trigger the extension by typing "sf" and then hitting "tab". This will activate the extension and open the quick search
+3. Type in one of your saved shortcuts (e.g., 'prod'), followed by a whitespace and then the Salesforce ID you want to search for
+4. Hit "enter" to search for the record
 
-1. In Chrome's URL bar, type `sf` and press `Tab`
-2. Type or paste your Salesforce record ID (e.g., `001XXXXXXXXXXXXXXX`)
-3. Press `Enter` to navigate directly to the record
+## Configuration
+1. Click the extension icon to manage your Salesforce URLs
+2. Add shortcuts for each Salesforce instance you use
+3. Each shortcut needs:
+   - A unique key (letters, numbers, and dashes only)
+   - A valid Salesforce URL
 
-This will navigate to: `https://mycompany.my.salesforce.com/001XXXXXXXXXXXXXXX`
-
-## Tips
-
-- Works with any Salesforce record ID (Accounts, Contacts, Opportunities, Custom Objects, etc.)
-- The extension automatically concatenates your configured org URL with the record ID
-- You can update your org URL at any time through the extension options
-
-## Requirements
-
-- Google Chrome browser
-- A Salesforce org URL
-- Valid Salesforce record IDs
-
-## Known Issues
-
-None currently reported. If you encounter any issues, please submit them in the Issues section of this repository.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+## Support
+For issues, questions, or suggestions, please [open an issue](https://github.com/Alamo-Industries/chrome-salesforce-id-search/issues).
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-#### Proudly presented to you by Alamo Industries
+This project is licensed under the MIT License - see the LICENSE file for details.

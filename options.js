@@ -7,9 +7,9 @@ function save_options() {
     const key = entry.querySelector('.urlKey').value.trim().toLowerCase();
     let url = entry.querySelector('.orgUrl').value.trim();
     
-    // Validate key format
-    if (!/^[a-z]+$/.test(key)) {
-      showStatus('URL keys must contain only lowercase letters (a-z)', 'error');
+    // Validate key format - now allows letters, numbers, and dashes
+    if (!/^[a-z0-9-]+$/.test(key)) {
+      showStatus('URL keys must contain only lowercase letters, numbers, and dashes', 'error');
       return;
     }
     
@@ -65,13 +65,35 @@ function addUrlEntry(container, key = '', url = '') {
   entry.innerHTML = `
     <input type="text" class="urlKey" placeholder="Key (e.g., prod)" value="${key}">
     <input type="url" class="orgUrl" placeholder="https://your-instance.salesforce.com" value="${url}">
-    <button class="delete-btn" title="Delete">Remove</button>
+    <button class="delete-btn" title="Delete">
+      <i class="fas fa-trash-alt"></i>
+    </button>
   `;
 
   // Add delete functionality
   const deleteBtn = entry.querySelector('.delete-btn');
   deleteBtn.addEventListener('click', () => {
+    const allEntries = container.querySelectorAll('.url-entry');
+    
+    // If this is the only entry and it's empty, don't remove it
+    if (allEntries.length === 1) {
+      const keyInput = entry.querySelector('.urlKey');
+      const urlInput = entry.querySelector('.orgUrl');
+      if (!keyInput.value && !urlInput.value) {
+        return;
+      }
+      // If it's the only entry but has content, clear it instead of removing
+      keyInput.value = '';
+      urlInput.value = '';
+      return;
+    }
+    
     entry.remove();
+    
+    // If we removed the last entry, add a blank one
+    if (container.querySelectorAll('.url-entry').length === 0) {
+      addUrlEntry(container);
+    }
   });
 
   container.appendChild(entry);

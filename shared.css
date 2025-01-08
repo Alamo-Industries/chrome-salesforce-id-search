@@ -1,8 +1,15 @@
 body {
-  width: 500px;
+  width: 600px;
   padding: 15px;
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   background-color: #f5f5f5;
+  margin: 0;
+}
+
+.options-page {
+  width: 800px;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .container {
@@ -12,22 +19,51 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h3 {
+  margin: 0;
+  color: #1a73e8;
+}
+
+#openOptions {
+  color: #666;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#openOptions:hover {
+  color: #1a73e8;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
 .url-entry {
   margin-bottom: 15px;
   display: grid;
-  grid-template-columns: 120px 1fr 40px;
+  grid-template-columns: 150px 1fr 40px;
   gap: 10px;
   align-items: center;
 }
 
 input {
   height: 36px;
-  padding: 8px;
+  padding: 8px 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
   width: 100%;
   font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 input:focus {
@@ -38,21 +74,29 @@ input:focus {
 
 .button-container {
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 button {
   height: 36px;
-  background-color: #1a73e8;
-  color: white;
   padding: 0 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-color 0.2s;
   line-height: 36px;
+}
+
+button i {
+  font-size: 14px;
 }
 
 button:hover {
@@ -60,23 +104,45 @@ button:hover {
 }
 
 .delete-btn {
-  width: auto;
+  width: 36px;
   height: 36px;
-  padding: 0 12px;
+  padding: 0;
   background-color: #dc3545;
   color: white;
-  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .delete-btn:hover {
   background-color: #c82333;
 }
 
+#addUrl, #save {
+  width: 150px;
+  min-height: 36px;
+  max-height: 36px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: white;
+}
+
 #addUrl {
-  background-color: #28a745;
+  background-color: #1a73e8;
 }
 
 #addUrl:hover {
+  background-color: #1557b0;
+}
+
+#save {
+  background-color: #28a745;
+}
+
+#save:hover {
   background-color: #218838;
 }
 
@@ -89,21 +155,43 @@ button:hover {
   font-size: 14px;
 }
 
-.success {
-  background-color: #e8f5e9;
-  color: #2e7d32;
+.success { background-color: #e8f5e9; color: #2e7d32; }
+.error { background-color: #ffebee; color: #c62828; }
+
+.instructions {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid #1a73e8;
 }
 
-.error {
-  background-color: #ffebee;
-  color: #c62828;
+.instructions h4 {
+  margin-top: 0;
+  color: #1a73e8;
+  font-size: 16px;
+}
+
+.instructions ol {
+  padding-left: 20px;
+  color: #555;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.instructions ul {
+  padding-left: 15px;
+}
+
+.instructions li {
+  margin-bottom: 8px;
 }
 
 .footer {
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   color: #888;
-  margin-top: 15px;
+  margin-top: 20px;
   font-style: italic;
 }
 
@@ -116,4 +204,38 @@ button:hover {
   max-height: 300px;
   overflow-y: auto;
   margin-bottom: 15px;
+  padding-right: 5px;
+}
+
+#urls-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#urls-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+#urls-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#urls-container::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+#save {
+  flex: 1;
+}
+
+.help-text {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  color: #666;
+  font-size: 13px;
+  text-align: center;
+  border-left: 3px solid #1a73e8;
 } 

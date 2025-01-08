@@ -4,19 +4,39 @@
 <head>
   <title>Extension Options</title>
   <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body>
+<body class="options-page">
   <div class="container">
-    <h2>Salesforce Id Search Settings</h2>
+    <h2>Find in Salesforce URL Settings</h2>
+    <p class="description">
+      Configure your Salesforce instance shortcuts here. Each entry needs a unique key and a valid Salesforce URL.
+    </p>
     <div id="urls-container">
       <!-- URL entries will be added here dynamically -->
     </div>
     <div class="button-container">
-      <button id="addUrl">Add New Entry</button>
-      <button id="save">Save</button>
+      <button id="addUrl">
+        <i class="fas fa-plus"></i> Add New Entry
+      </button>
+      <button id="save">
+        <i class="fas fa-save"></i> Save Changes
+      </button>
     </div>
     <div id="status"></div>
+    <div class="instructions">
+      <h4>How to use this extension:</h4>
+      <ol>
+        <li>Add Salesforce URLs with unique shortcut keys (e.g., 'prod' for production)</li>
+        <ul>
+          <li>You can check your saved URLs by clicking the extension icon in your browser</li>
+        </ul>
+        <li>Trigger the extension by typing <code>sf</code> and then hitting <code>tab</code>. This will activate the extension and open the quick search</li>
+        <li>Type in one of your saved shortcuts (e.g., 'prod'), followed by a whitespace and then the Salesforce ID you want to search for</li>
+        <li>Hit <code>enter</code> to search for the record</li>
+      </ol>
+    </div>
     <div class="footer">proudly presented to you by <span>Alamo Industries</span> &#10024;</div>
   </div>
   <script src="options.js"></script>
